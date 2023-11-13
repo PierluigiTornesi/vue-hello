@@ -13,7 +13,20 @@
 <body>
     
     <div id="app">
-        <h1>{{greeting}}</h1>
+
+        <!-- input per inserire il colore che l'utente preferisce -->
+        <label :class="colorClass"    for="u-color">Che colore preferisci tra il "blu", il "rosso" e il "viola"? Inserisci la risposta </label>
+        <input :class="colorClass"   id="u-color" type="text" v-model = "userColor">
+
+        <hr>
+
+        <!-- bottone per vedere l'immagine collegata al colore inserito -->
+        <button :class="colorClass"  @click="isBlueViolet">Clicca per vedere l'immagine inerente alla tua risposta </button>
+        <hr>
+
+        <!-- testo sopra l'immagine -->
+        <h1 :class="colorClass" >{{greeting}}</h1>
+        <!-- immagine  -->
         <img :src="imgSrc" alt="">
     </div>
 
